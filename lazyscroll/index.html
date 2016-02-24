@@ -1,0 +1,285 @@
+<!--
+ **  zhouguocheng @2015 **
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>lazyScroll</title>
+<link rel="stylesheet" href="css/lazyscroll.css" media="screen">
+<style>
+body{
+text-align:center;
+}
+.list {
+    position:absolute;
+    left: 0;
+    top: 0px;
+    bottom : 0;
+    width: 100%;
+    max-width: 533px;
+    margin: auto;
+}
+.text-left {
+    text-align: left;
+}
+.goods-occupy {
+    height: 276px;
+    width: 208px;
+    margin: 0px auto 8px auto;
+}
+.goods-occupy-normal {
+    padding: 4px;
+    background: #fff;
+}
+.goods-img {
+    height: 200px;
+    width: 200px;
+}
+.img-auto {
+    background-color: #fff;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.goods-description {
+    font-size: 16px;
+    color: #252525;
+    margin: 13px 10px;
+}
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.goods-price {
+    font-size: 16px;
+    color: #ff2a00;
+    margin-left: 10px;
+    margin-bottom: 9px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 359px) {
+.goods-container>span:nth-child(odd) {
+    float: left;
+    margin-left: 10px;
+}
+.goods-container>span:nth-child(even) {
+    float: right;
+    margin-right: 10px;
+}
+.goods-occupy {
+    height: 214px;
+    width: 146px;
+    margin-bottom: 8px;
+}
+.goods-img {
+    height: 138px;
+    width: 138px;
+}
+}
+ @media only screen and (min-width: 360px) and (max-width: 409px) {
+.goods-container>span:nth-child(odd) {
+    float: left;
+    margin-left: 10px;
+}
+.goods-container>span:nth-child(even) {
+    float: right;
+    margin-right: 10px;
+}
+.goods-occupy {
+    height: 234px;
+    width: 166px;
+    margin-bottom: 8px;
+}
+.goods-img {
+    height: 158px;
+    width: 158px;
+}
+}
+ @media only screen and (min-width: 410px) and (max-width: 532px) {
+.goods-container>span:nth-child(odd) {
+    float: left;
+    margin-left: 20px;
+}
+.goods-container>span:nth-child(even) {
+    float: right;
+    margin-right: 20px;
+}
+.goods-occupy {
+    height: 244px;
+    width: 176px;
+    margin-bottom: 8px;
+}
+.goods-img {
+    height: 168px;
+    width: 168px;
+}
+}
+ @media only screen and (min-width: 533px) {
+.goods-container>span:nth-child(3n+1) {
+    float: left;
+    margin-left: 10px;
+}
+.goods-container>span:nth-child(3n+2) {
+    float: left;
+    margin-left: 10px;
+}
+.goods-container>span:nth-child(3n+3) {
+    float: right;
+    margin-right: 10px;
+}
+.goods-occupy {
+    height: 234px;
+    width: 140px;
+    margin-bottom: 8px;
+}
+.goods-img {
+    height: 130px;
+    width: 130px;
+}
+}
+</style>
+</head>
+<body>
+<div class="list" id="outer-list">
+<div id="inner-list">
+<div class="goods-container">
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
+          <div style="background-image:url(sample1.png)" class="goods-img img-auto"></div>
+          <p class="goods-description text-ellipsis">初始化图片</p>
+            <p class="goods-price">￥100</p>
+        </span>
+        <div class="clearboth" style="clear:both"></div>
+        </div>
+</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/lazy_scroll.js"></script>
+<script type="text/javascript">
+var count = 0;
+    var lazyScroll = new LazyScroll({
+            outerid : 'outer-list',
+            innerid : 'inner-list',
+            elementH : $("#goods-0").get(0).clientHeight,
+            ehratio : 2,
+            haveMore : true,
+            loadingcb : getMoreGoods
+        });
+        
+    function getMoreGoods(){
+    setTimeout(function (){
+    for(var i = 0; i<20;i++){
+    $('.clearboth').before('<span id="goods-0" class="text-left goods-occupy goods-occupy-normal"><div style="background-image:url(' + 'sample' + (count+2) + '.png' + ')" class="goods-img img-auto"></div><p class="goods-description text-ellipsis">第' + (count + 1) + '次加载图片</p><p class="goods-price">￥100</p></span>');
+    }
+    if(count < 1){
+    lazyScroll.loadEnd(true);
+    }else{
+    lazyScroll.loadEnd(false);
+    }
+        count++;
+    }, 5000);
+    }
+</script>
+</body>
+</html>
