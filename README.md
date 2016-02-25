@@ -1,6 +1,4 @@
 # LazyScroll for html
-
 ***
-
 #Usage
 
