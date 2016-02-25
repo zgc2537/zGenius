@@ -36,11 +36,11 @@ Here is the sample:
     function getMoreGoods() {
         setTimeout(function () {
             for (var i = 0; i < 20; i++) {
-                $('.clearboth').before('<span id="goods-0" class="text-left goods-occupy goods-occupy-normal">
-                <div style="background-image:url(' + 'sample' + (count + 2) + '.png' + ')"
-                class="goods-img img-auto"></div>
-                <p class="goods-description text-ellipsis">第' + (count + 1) + '次加载图片</p>
-                <p class="goods-price">￥100</p></span>');
+                $('.clearboth').before('<span id="goods-0" class="text-left goods-occupy goods-occupy-normal">'
+                + '<div style="background-image:url(' + 'sample' + (count + 2) + '.png' + ')"'
+                + 'class="goods-img img-auto"></div>'
+                + '<p class="goods-description text-ellipsis">第' + (count + 1) + '次加载图片</p>'
+                + '<p class="goods-price">￥100</p></span>');
             }
             if (count < 1) {
                 //loadEnd(haveMore)
