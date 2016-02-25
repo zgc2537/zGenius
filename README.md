@@ -4,6 +4,7 @@
 ##Usage
     This project aims to provide a reusable scroll loading widget for html. It implements refreshing new view automatically when the former view scrolled to the given height from the end. I achieve it by simple method and less codes. It uses the html build-in scroll rather than custom scroll.
 Here is the sample:
+
     var count = 0;
     //new lazyScroll object and init.
     var lazyScroll = new LazyScroll({
