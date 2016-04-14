@@ -39,9 +39,11 @@
         },
         _scrollHandler : function () {
             var scrollT = $(window).scrollTop(),
-            loadingHeightFromBottom = this.lazyScroll.opts.elementH ? this.lazyScroll.opts.elementH * this.lazyScroll.opts.ehratio : this.lazyScroll.opts.slhfe;
+            loadingHeightFromBottom = this.lazyScroll.opts.elementH ? this.lazyScroll.opts.elementH * this.lazyScroll.opts.ehratio :
+                this.lazyScroll.opts.slhfe;
 
-            if ($('#' + this.lazyScroll.opts.innerid).get(0).clientHeight - this.lazyScroll.outerVistibleHeight - loadingHeightFromBottom < scrollT && !this.lazyScroll.loading) {
+            if ($('#' + this.lazyScroll.opts.innerid).get(0).clientHeight - this.lazyScroll.outerVistibleHeight -
+                loadingHeightFromBottom < scrollT && !this.lazyScroll.loading) {
                 this.lazyScroll.loading = true;
                 this.lazyScroll.opts.loadingcb();
             }
