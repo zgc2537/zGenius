@@ -8,7 +8,7 @@
                 innerid : '', //内容容器id，装载内容的直接容器
                 hElement : undefined, //动态加载单个内容项，与slhfe互斥，两个参数选其一进行复制，
                                       //如果两个参数都有，则以此参数的clientHeight为准
-                ehratio : 2, //与elementH配合使用，从内容容器底部开始向上elementH * ehratio的高度处开始加载新的内容
+                ehratio : 2, //与hElement配合使用，从内容容器底部开始向上hElement.clientHeight * ehratio的高度处开始加载新的内容
                 slhfe : 100, //从内容容器底部开始向上的高度，从此高度就开始加载新的内容
                 haveMore : false, //是否还有更多的内容
                 haveInitData : true, //是否有初始数据
