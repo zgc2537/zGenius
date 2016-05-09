@@ -19,8 +19,8 @@ Here is the sample:
         //The one to be loaded.
         hElement : $("#goods-0").get(0),
         //Optional. This is working with the hElement.
-        //When Scrolling to hElement.clentHeight * ehratio high from the end of the former view, it will start loading
-        //the new content.
+        //When Scrolling to hElement.clentHeight * ehratio high from the end of the former view, 
+        //it will start loading the new content.
         ehratio : 2,
         //Optional.  When Scrolling to this given slhfe high from the end of the former view,
         //it will start loading the new content.
