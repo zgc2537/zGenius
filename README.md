@@ -27,7 +27,8 @@ Here is the sample:
         slhfe : 0,
         //Optional, default is false. Whether or not there has more contents.
         haveMore : true,
-        //Optional, default is true. Whether or not there has init contents, if not, call loadingcb to load init contents automatically
+        //Optional, default is true. Whether or not there has init contents
+        //if not, call loadingcb to load init contents automatically
         haveInitData : true,
         //Required. The pointer of the function which loads the new contents.
         loadingcb : getMoreGoods,
