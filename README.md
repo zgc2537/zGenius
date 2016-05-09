@@ -16,10 +16,10 @@ Here is the sample:
         //Requried. The id of the inner container which contains the main content.
         innerid : 'inner-list',
         //Optional, elementH and slhfe are mutually exclusive, slhfe is defalut.
-        //The height of the one to be loaded.
-        elementH : $("#goods-0").get(0).clientHeight,
-        //Optional. This is working with the elementH.
-        //When Scrolling to elementH * ehratio high from the end of the former view, it will start loading
+        //The one to be loaded.
+        hElement : $("#goods-0").get(0),
+        //Optional. This is working with the hElement.
+        //When Scrolling to hElement.clentHeight * ehratio high from the end of the former view, it will start loading
         //the new content.
         ehratio : 2,
         //Optional.  When Scrolling to this given slhfe high from the end of the former view,
@@ -27,6 +27,8 @@ Here is the sample:
         slhfe : 0,
         //Optional, default is false. Whether or not there has more contents.
         haveMore : true,
+        //Optional, default is true. Whether or not there has init contents, if not, call loadingcb to load init contents automatically
+        haveInitData : true,
         //Required. The pointer of the function which loads the new contents.
         loadingcb : getMoreGoods,
         loadingtext : '正在加载...',//Optional.
@@ -43,7 +45,7 @@ Here is the sample:
                 + '<p class="goods-price">￥100</p></span>');
             }
             if (count < 1) {
-                //loadEnd(haveMore)
+                //make page first
                 lazyScroll.loadEnd(true);//when new contents were loaded, notice changing.
             } else {
                 lazyScroll.loadEnd(false);
