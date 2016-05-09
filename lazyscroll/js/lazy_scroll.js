@@ -47,7 +47,7 @@
         },
         _scrollHandler : function () {
             var scrollT = $(window).scrollTop(),
-            loadingHeightFromBottom = this.lazyScroll.opts.elementH ? this.lazyScroll.opts.elementH * this.lazyScroll.opts.ehratio :
+            loadingHeightFromBottom = this.lazyScroll.elementH ? this.lazyScroll.elementH * this.lazyScroll.opts.ehratio :
                 this.lazyScroll.opts.slhfe;
 
             if ($('#' + this.lazyScroll.opts.innerid).get(0).clientHeight - this.lazyScroll.outerVistibleHeight -
