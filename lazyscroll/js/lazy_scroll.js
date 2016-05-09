@@ -6,14 +6,17 @@
         this.opts = $.extend({
                 outerid : '', //内容容器的外部容器id，一般高度小于等于屏幕高度的容器
                 innerid : '', //内容容器id，装载内容的直接容器
-                elementH : 0, //每个内容的高度，与slhfe互斥，两个参数选其一进行复制，如果两个参数都有，则以此参数为准
+                hElement : undefined, //动态加载单个内容项，与slhfe互斥，两个参数选其一进行复制，
+                                      //如果两个参数都有，则以此参数的clientHeight为准
                 ehratio : 2, //与elementH配合使用，从内容容器底部开始向上elementH * ehratio的高度处开始加载新的内容
                 slhfe : 100, //从内容容器底部开始向上的高度，从此高度就开始加载新的内容
                 haveMore : false, //是否还有更多的内容
+                haveInitData : true, //是否有初始数据
                 loadingcb : null, //用户自定义加载数据动作，由控件自动调用
                 loadingtext : '正在加载...',
                 nomoretext : '没有更多了'
             }, options || {}),
+        this.elementH = this.opts.hElement ? this.opts.hElement.clientHeight : 0,
         this.loading = false,
         this.tipObj = null,
         this.tipLabelObj = null,
@@ -24,11 +27,16 @@
         </div><div class="ls-loading-container container3"><div class="circle1"></div><div class="circle2"></div>\
         <div class="circle3"></div><div class="circle4"></div></div></span><span class="sts_label">'
         + this.opts.loadingtext + '</span></div>',
-        this.outerVistibleHeight = $('#' + this.opts.outerid).get(0).clientHeight;
+        this.outerVistibleHeight = $('#' + this.opts.outerid).get(0).clientHeight,
+        this.initGetData = true;
         this._init();
     };
     lazyScroll.prototype = {
         _init : function () {
+            if(!this.opts.haveInitData) {
+                this.loading = true;
+                this.opts.loadingcb();
+            }
             this._insertFooterUI();
             if (this.opts.haveMore) {
                 this._bindScrollEvent();
@@ -52,12 +60,17 @@
          * more : 内容加载完成后，是否还有更多的内容
          **/
         loadEnd : function (more) {
+            if(!this.opts.haveInitData && this.initGetData) {
+                this.elementH = this.opts.hElement ? this.opts.hElement.clientHeight : 0;
+                this.initGetData = false;
+                this.tipObj.remove();
+                this._insertFooterUI();
+            }
             if (!more) {
                 this._changeToNoMoreUi();
                 this._unbindScrollEvent();
-            } else {
-                this.loading = false;
             }
+            this.loading = false;
         },
         _insertFooterUI : function () {
             $('#' + this.opts.innerid).append(this.tipHtmlStr);
