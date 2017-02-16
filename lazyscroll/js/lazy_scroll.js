@@ -21,12 +21,14 @@
         this.tipObj = null,
         this.tipLabelObj = null,
         this.tipHtmlStr = '<div id="ls_sts_bar" class = "split_loading"><span class="ls-loading">\
-			<div class="ls-loading-container container1"><div class="ls-loading-container container2">\
-			<div class="circle1"></div><div class="circle2"></div><div class="circle3"></div>\
+			<div class="ls-loading-container container1"><div class="circle1"></div>\
+			<div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div>\
+			<div class="ls-loading-container container2"><div class="circle1"></div>\
+			<div class="circle2"></div><div class="circle3"></div>\
 			<div class="circle4"></div></div><div class="ls-loading-container container3">\
 			<div class="circle1"></div><div class="circle2"></div><div class="circle3"></div>\
 			<div class="circle4"></div></div></span><span class="sts_label">'
-                + this.opts.loadingText + '</span></div>',
+				+ this.opts.loadingText + '</span></div>',
         this.outerVistibleHeight = $('#' + this.opts.outerCId).get(0).clientHeight,
         this.initGetData = true;
         this._calElementHeight();
